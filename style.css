@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f2;
+}
+
+.container {
+  max-width: 700px;
+  width: max-content;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 0px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #0044ff;
+  color: white;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.button:active,
+.button:hover {
+  background-color: #002488;
+}
+
+.videoInfo {
+  margin-top: 20px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.videoInfo a {
+  display: block;
+  align-items: center;
+}
+
+.downloadBox {
+  text-align: center;
+}
+
+.downButton {
+  width: 150px;
+  margin-top: 10px;
+  background-color: #ff0000;
+}
+
+.downButton:active,
+.downButton:hover {
+  background-color: #cf0000;
+}
+
+  #userInput {
+    width: 500px;
+    margin-right: 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #f0f0f2;
+    
+  }
+  
+  #ytThumbnail {
+    padding: 20px 20px;
+    max-width: 560px;
+    max-height: 315px;
+    width: max-content;
+    height: max-content;
+    border-radius: 50px;
+    transform: scale(1.1);
+  }
+
+  #optionBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #qualityOption {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #ff9900;
+  }
+
+  #qualityOption:active,
+  #qualityOption:hover {
+    background-color: #bb7000;
+  }
