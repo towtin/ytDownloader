@@ -1,4 +1,4 @@
-import ytdl from "ytdl-core";
+// import ytdl from "ytdl-core";
 
 function searchVideo() {
   const getVideoID = () => {
@@ -37,71 +37,71 @@ function searchVideo() {
   }
 }
 
-function videoOnly() {
-  const videoUrl = document.getElementById("userInput").value;
+// function videoOnly() {
+//   const videoUrl = document.getElementById("userInput").value;
 
-  // Download the video using ytdl-core
-  ytdl(videoUrl, { filter: "videoonly" }).pipeTo(
-    new WritableStream({
-      write(chunk) {
-        // Handle each chunk of data received
-        console.log("Received chunk:", chunk);
-      },
-      close() {
-        // The download is complete
-        console.log("Video downloaded successfully!");
-      },
-      abort(error) {
-        // Handle error or abort
-        console.error("Error while downloading the video:", error);
-      },
-    })
-  );
-}
+//   // Download the video using ytdl-core
+//   ytdl(videoUrl, { filter: "videoonly" }).pipeTo(
+//     new WritableStream({
+//       write(chunk) {
+//         // Handle each chunk of data received
+//         console.log("Received chunk:", chunk);
+//       },
+//       close() {
+//         // The download is complete
+//         console.log("Video downloaded successfully!");
+//       },
+//       abort(error) {
+//         // Handle error or abort
+//         console.error("Error while downloading the video:", error);
+//       },
+//     })
+//   );
+// }
 
-function audioOnly() {
-  const videoUrl = document.getElementById("userInput").value;
+// function audioOnly() {
+//   const videoUrl = document.getElementById("userInput").value;
 
-  // Download the audio
-  ytdl(videoUrl, { filter: "audioonly" }).pipeTo(
-    new WritableStream({
-      write(chunk) {
-        // Handle each chunk of data received
-        console.log("Received chunk:", chunk);
-      },
-      close() {
-        // The download is complete
-        console.log("Video downloaded successfully!");
-      },
-      abort(error) {
-        // Handle error or abort
-        console.error("Error while downloading the video:", error);
-      },
-    })
-  );
-}
+//   // Download the audio
+//   ytdl(videoUrl, { filter: "audioonly" }).pipeTo(
+//     new WritableStream({
+//       write(chunk) {
+//         // Handle each chunk of data received
+//         console.log("Received chunk:", chunk);
+//       },
+//       close() {
+//         // The download is complete
+//         console.log("Video downloaded successfully!");
+//       },
+//       abort(error) {
+//         // Handle error or abort
+//         console.error("Error while downloading the video:", error);
+//       },
+//     })
+//   );
+// }
 
-function videoAndAudio() {
-  const videoUrl = document.getElementById("userInput").value;
+// function videoAndAudio() {
+//   const videoUrl = document.getElementById("userInput").value;
 
-  // Download the video and audio
-  ytdl(videoUrl, { filter: "videoandaudio" }).pipeTo(
-    new WritableStream({
-      write(chunk) {
-        // Handle each chunk of data received
-        console.log("Received chunk:", chunk);
-      },
-      close() {
-        // The download is complete
-        console.log("Video downloaded successfully!");
-      },
-      abort(error) {
-        // Handle error or abort
-        console.error("Error while downloading the video:", error);
-      },
-    })
-  );
-}
+//   // Download the video and audio
+//   ytdl(videoUrl, { filter: "videoandaudio" }).pipeTo(
+//     new WritableStream({
+//       write(chunk) {
+//         // Handle each chunk of data received
+//         console.log("Received chunk:", chunk);
+//       },
+//       close() {
+//         // The download is complete
+//         console.log("Video downloaded successfully!");
+//       },
+//       abort(error) {
+//         // Handle error or abort
+//         console.error("Error while downloading the video:", error);
+//       },
+//     })
+//   );
+// }
 
 // ---- features for later, choosing formats and quality -----
 
