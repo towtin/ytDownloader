@@ -1,4 +1,4 @@
-// import ytdl from "ytdl-core";
+import ytdl from "ytdl-core";
 
 function searchVideo() {
   const getVideoID = () => {
@@ -37,124 +37,73 @@ function searchVideo() {
   }
 }
 
-// function videoOnly() {
-//   const videoUrl = document.getElementById("userInput").value;
+function videoOnly() {
+  const videoUrl = document.getElementById("userInput").value;
 
-//   // Download the video using ytdl-core
-//   ytdl(videoUrl, { filter: "videoonly" }).pipeTo(
-//     new WritableStream({
-//       write(chunk) {
-//         // Handle each chunk of data received
-//         console.log("Received chunk:", chunk);
-//       },
-//       close() {
-//         // The download is complete
-//         console.log("Video downloaded successfully!");
-//       },
-//       abort(error) {
-//         // Handle error or abort
-//         console.error("Error while downloading the video:", error);
-//       },
-//     })
-//   );
-// }
+  // Download the video using ytdl-core
+  ytdl(videoUrl, { filter: "videoonly" }).pipeTo(
+    new WritableStream({
+      write(chunk) {
+        // Handle each chunk of data received
+        console.log("Received chunk:", chunk);
+      },
+      close() {
+        // The download is complete
+        console.log("Video downloaded successfully!");
+      },
+      abort(error) {
+        // Handle error or abort
+        console.error("Error while downloading the video:", error);
+      },
+    })
+  );
+}
 
-// function audioOnly() {
-//   const videoUrl = document.getElementById("userInput").value;
+function audioOnly() {
+  const videoUrl = document.getElementById("userInput").value;
 
-//   // Download the audio
-//   ytdl(videoUrl, { filter: "audioonly" }).pipeTo(
-//     new WritableStream({
-//       write(chunk) {
-//         // Handle each chunk of data received
-//         console.log("Received chunk:", chunk);
-//       },
-//       close() {
-//         // The download is complete
-//         console.log("Video downloaded successfully!");
-//       },
-//       abort(error) {
-//         // Handle error or abort
-//         console.error("Error while downloading the video:", error);
-//       },
-//     })
-//   );
-// }
+  // Download the audio
+  ytdl(videoUrl, { filter: "audioonly" }).pipeTo(
+    new WritableStream({
+      write(chunk) {
+        // Handle each chunk of data received
+        console.log("Received chunk:", chunk);
+      },
+      close() {
+        // The download is complete
+        console.log("Video downloaded successfully!");
+      },
+      abort(error) {
+        // Handle error or abort
+        console.error("Error while downloading the video:", error);
+      },
+    })
+  );
+}
 
-// function videoAndAudio() {
-//   const videoUrl = document.getElementById("userInput").value;
+function videoAndAudio() {
+  const videoUrl = document.getElementById("userInput").value;
 
-//   // Download the video and audio
-//   ytdl(videoUrl, { filter: "videoandaudio" }).pipeTo(
-//     new WritableStream({
-//       write(chunk) {
-//         // Handle each chunk of data received
-//         console.log("Received chunk:", chunk);
-//       },
-//       close() {
-//         // The download is complete
-//         console.log("Video downloaded successfully!");
-//       },
-//       abort(error) {
-//         // Handle error or abort
-//         console.error("Error while downloading the video:", error);
-//       },
-//     })
-//   );
-// }
+  // Download the video and audio
+  ytdl(videoUrl, { filter: "videoandaudio" }).pipeTo(
+    new WritableStream({
+      write(chunk) {
+        // Handle each chunk of data received
+        console.log("Received chunk:", chunk);
+      },
+      close() {
+        // The download is complete
+        console.log("Video downloaded successfully!");
+      },
+      abort(error) {
+        // Handle error or abort
+        console.error("Error while downloading the video:", error);
+      },
+    })
+  );
+}
 
-// ---- features for later, choosing formats and quality -----
-
-// function video() {
-//   const getVideoID = () => {
-//     const userInput = document.getElementById("userInput").value;
-//     const regex =
-//       /^(?:(?:https?:)?\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=|embed\/|v\/|shorts\/)?([0-9A-Za-z_-]{11})(?:\S+)?$/;
-//     const match = userInput.match(regex);
-//     if (match && match[1]) return match;
-//     else return null;
-//   };
-
-//   let videoID = getVideoID();
-
-//   let downloadBox = document.getElementsByClassName("downloadBox")[0];
-//   downloadBox.id = "";
-//   downloadBox.innerHTML = "";
-//   let downOption = downloadBox.innerHTML;
-
-//   downOption += `<select class="button" id="qualityOption">
-//                 <option disabled selected hidden>Choose Quality and Formats</option>
-//                 <option value="option1">Option 1</option>
-//                 <option value="option2">Option 2</option>
-//                 </select>
-//                 <button class="button downButton">Download</button>`;
-
-//   downloadBox.innerHTML = downOption;
-// }
-
-// function audio() {
-//   const getVideoID = () => {
-//     const userInput = document.getElementById("userInput").value;
-//     const regex =
-//       /^(?:(?:https?:)?\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=|embed\/|v\/|shorts\/)?([0-9A-Za-z_-]{11})(?:\S+)?$/;
-//     const match = userInput.match(regex);
-//     if (match && match[1]) return match;
-//     else return null;
-//   };
-
-//   let videoID = getVideoID();
-
-//   let downloadBox = document.getElementsByClassName("downloadBox")[0];
-//   downloadBox.id = "";
-//   downloadBox.innerHTML = "";
-//   let downOption = downloadBox.innerHTML;
-
-//   downOption += `<select class="button" id="qualityOption">
-//                 <option disabled selected hidden>Choose Quality and Formats</option>
-//                 <option value="option1">Option 1</option>
-//                 <option value="option2">Option 2</option>
-//                 </select>
-//                 <button class="button downButton">Download</button>`;
-
-//   downloadBox.innerHTML = downOption;
-// }
+window.searchVideo = searchVideo;
+window.audioOnly = audioOnly;
+window.videoOnly = videoOnly;
+window.videoAndAudio = videoAndAudio;

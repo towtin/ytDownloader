@@ -10,28 +10,21 @@
 <body>
     <div class="container">
         <input type="text" id="userInput" placeholder="Paste your link here">
-        <button class="button" onclick="searchVideo()">Search</button>
+        <button class="button" id="searchButton" onclick="searchVideo()">Search</button>
         <div class="videoInfo">
             <a id="ytLink" href="#"><img id="ytThumbnail" src=""></a>
         </div>
         <div class="downloadBox" id="">
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./dist/bundle.js"></script>
+    <script type="module">
+        import {searchVideo, videoOnly, audioOnly, videoAndAudio} from './script.js'
+
+        document.getElementById("searchButton").addEventListener("click", searchVideo)
+        document.getElementById("videoDown").addEventListener("click", videoOnly)
+        document.getElementById("audioDown").addEventListener("click", audioOnly)
+        document.getElementById("videoAudioDown").addEventListener("click", videoAndAudio)
+    </script>
 </body>
 </html>
-
-<!-- <select>
-    <option disabled selected hidden>Choose Quality</option>
-    <option value="option1">Option 1</option>
-    <option value="option2">Option 2</option>
-</select>
-<select>
-    <option disabled selected hidden>Choose Format</option>
-    <option value="option1">Option 1</option>
-    <option value="option2">Option 2</option>
-</select>
-<button class="button downButton">Video</button> -->
-
-<!-- <button class="button downButton" id="videoDown">Video</button>
-            <button class="button downButton" id="audioDOwn">Audio</button> -->
